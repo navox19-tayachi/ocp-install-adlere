@@ -1,0 +1,84 @@
+[36mUsing variables resources/ocp_vars.yml [0m
+./ansible_launcher.sh lib/ocp_11_openshift_provision_cluster.yml
+
+**********************************************************
+** FATAL ERROR: Only RHEL 7.X is supported              **
+**********************************************************
+
+
+PLAY [localhost] *******************************************************************
+
+TASK [VPSHERE | Creates CoreOS bootable via PXE] ***********************************
+ok: [localhost] => (item={'name': 'ocp4-2-bootstrap-0', 'ip': '192.168.204.10', 'mac': '00:50:56:00:23:10', 'machine_type': 'bootstrap'})
+ok: [localhost] => (item={'name': 'ocp4-2-control-plane-0', 'ip': '192.168.204.20', 'mac': '00:50:56:00:23:20', 'machine_type': 'master'})
+ok: [localhost] => (item={'name': 'ocp4-2-control-plane-1', 'ip': '192.168.204.21', 'mac': '00:50:56:00:23:21', 'machine_type': 'master'})
+ok: [localhost] => (item={'name': 'ocp4-2-control-plane-2', 'ip': '192.168.204.22', 'mac': '00:50:56:00:23:22', 'machine_type': 'master'})
+ok: [localhost] => (item={'name': 'ocp4-2-compute-0', 'ip': '192.168.204.30', 'mac': '00:50:56:00:23:30', 'type': 'worker, ingress, infra', 'machine_type': 'worker'})
+ok: [localhost] => (item={'name': 'ocp4-2-compute-1', 'ip': '192.168.204.31', 'mac': '00:50:56:00:23:31', 'type': 'worker, ingress, infra', 'machine_type': 'worker'})
+ok: [localhost] => (item={'name': 'ocp4-2-storage-0', 'ip': '192.168.204.40', 'mac': '00:50:56:00:23:40', 'disk_gb': 2000, 'type': 'storage', 'num_cpus': 14, 'memory_mb': 65536})
+ok: [localhost] => (item={'name': 'ocp4-2-storage-1', 'ip': '192.168.204.41', 'mac': '00:50:56:00:23:41', 'disk_gb': 2000, 'type': 'storage', 'num_cpus': 14, 'memory_mb': 65536})
+ok: [localhost] => (item={'name': 'ocp4-2-storage-2', 'ip': '192.168.204.42', 'mac': '00:50:56:00:23:42', 'disk_gb': 2000, 'type': 'storage', 'num_cpus': 14, 'memory_mb': 65536})
+
+TASK [VSPHERE | Provision Cluster with template and static IPs] ********************
+skipping: [localhost] => (item={'name': 'ocp4-2-bootstrap-0', 'ip': '192.168.204.10', 'mac': '00:50:56:00:23:10', 'machine_type': 'bootstrap'}) 
+skipping: [localhost] => (item={'name': 'ocp4-2-control-plane-0', 'ip': '192.168.204.20', 'mac': '00:50:56:00:23:20', 'machine_type': 'master'}) 
+skipping: [localhost] => (item={'name': 'ocp4-2-control-plane-1', 'ip': '192.168.204.21', 'mac': '00:50:56:00:23:21', 'machine_type': 'master'}) 
+skipping: [localhost] => (item={'name': 'ocp4-2-control-plane-2', 'ip': '192.168.204.22', 'mac': '00:50:56:00:23:22', 'machine_type': 'master'}) 
+skipping: [localhost] => (item={'name': 'ocp4-2-compute-0', 'ip': '192.168.204.30', 'mac': '00:50:56:00:23:30', 'type': 'worker, ingress, infra', 'machine_type': 'worker'}) 
+skipping: [localhost] => (item={'name': 'ocp4-2-compute-1', 'ip': '192.168.204.31', 'mac': '00:50:56:00:23:31', 'type': 'worker, ingress, infra', 'machine_type': 'worker'}) 
+skipping: [localhost] => (item={'name': 'ocp4-2-storage-0', 'ip': '192.168.204.40', 'mac': '00:50:56:00:23:40', 'disk_gb': 2000, 'type': 'storage', 'num_cpus': 14, 'memory_mb': 65536}) 
+skipping: [localhost] => (item={'name': 'ocp4-2-storage-1', 'ip': '192.168.204.41', 'mac': '00:50:56:00:23:41', 'disk_gb': 2000, 'type': 'storage', 'num_cpus': 14, 'memory_mb': 65536}) 
+skipping: [localhost] => (item={'name': 'ocp4-2-storage-2', 'ip': '192.168.204.42', 'mac': '00:50:56:00:23:42', 'disk_gb': 2000, 'type': 'storage', 'num_cpus': 14, 'memory_mb': 65536}) 
+
+TASK [Check if bootstrap node boots] ***********************************************
+changed: [localhost]
+
+TASK [Check if master node ocp4-2-control-plane-0 boots] ***************************
+changed: [localhost]
+
+TASK [Waiting up to 20 minutes for the api master to be up] ************************
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (40 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (39 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (38 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (37 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (36 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (35 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (34 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (33 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (32 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (31 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (30 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (29 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (28 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (27 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (26 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (25 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (24 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (23 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (22 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (21 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (20 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (19 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (18 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (17 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (16 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (15 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (14 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (13 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (12 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (11 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (10 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (9 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (8 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (7 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (6 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (5 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (4 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (3 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (2 retries left).
+FAILED - RETRYING: Waiting up to 20 minutes for the api master to be up (1 retries left).
+fatal: [localhost]: FAILED! => {"attempts": 40, "changed": true, "cmd": "oc cluster-info --kubeconfig=/opt/openshift.ocp4-2/auth/kubeconfig", "delta": "0:00:44.712497", "end": "2021-07-05 09:48:01.061847", "msg": "non-zero return code", "rc": 1, "start": "2021-07-05 09:47:16.349350", "stderr": "Unable to connect to the server: dial tcp: lookup api.ocp4-2.adlere.priv on 192.168.204.254:53: server misbehaving", "stderr_lines": ["Unable to connect to the server: dial tcp: lookup api.ocp4-2.adlere.priv on 192.168.204.254:53: server misbehaving"], "stdout": "\nTo further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.", "stdout_lines": ["", "To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'."]}
+
+PLAY RECAP *************************************************************************
+localhost                  : ok=3    changed=2    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+

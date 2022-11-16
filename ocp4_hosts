@@ -1,0 +1,14 @@
+ansible_python_interpreter=/usr/bin/python
+localhost ansible_host=localhost ansible_connection=local
+
+[infrastructure_servers]
+192.168.204.2 
+192.168.204.6 
+192.168.204.7 
+
+[networkmanager_server]
+192.168.204.2 
+
+[haproxy_server]
+192.168.204.6  keepalived_state=MASTER keepalived_priority=101   
+192.168.204.7  keepalived_state=MASTER keepalived_priority=101   

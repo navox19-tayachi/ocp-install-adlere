@@ -1,0 +1,6 @@
+.idea/
+.git/
+**.retry
+ocp4_hosts.yml
+ocp4_hosts
+resources/pki-*
